@@ -1,6 +1,6 @@
 export const ADD = "ADD";
 export const SUBTRACT = "SUBTRACTION";
-export const LOGIN = "LOGIN";
-export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGIN_ERROR = "LOGIN_ERROR";
+export const FETCH_DATA = "FETCH_DATA";
+export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
+export const FETCH_DATA_ERROR = "FETCH_DATA_ERROR";
 
