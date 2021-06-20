@@ -1,15 +1,30 @@
-export const postSagaReducer = (prevState = {}, action) => {
-  switch (action.type) {
-    case "GET_POSTS": {
-      return Object.assign({}, prevState, {isFetching: true});
+// Reducer
+const initialState = {
+    posts: [],
+    loading: false,
+    error: false,
+  };
+export const postSagaReducer = (state = initialState, action) => {
+    switch (action.type) {
+      case 'REQUESTED_POSTS':
+        return {
+          posts: [],
+          loading: true,
+          error: false,
+        };
+      case 'REQUESTED_POSTS_SUCCEEDED':
+        return {
+          posts: action.posts,
+          loading: false,
+          error: false,
+        };
+      case 'REQUESTED_POSTS_FAILED':
+        return {
+          posts: [],
+          loading: false,
+          error: true,
+        };
+      default:
+        return state;
     }
-    case "GET_POSTS_SUCCESS": {
-      return Object.assign({}, prevState, {isFetching: false}, {posts: action.data});
-    }
-    case "GET_POSTS_ERROR": {
-      return Object.assign({}, prevState, {isFetching: false}, {error: action.error});
-    }
-    default:
-      return prevState;
-  }
-}
+  };

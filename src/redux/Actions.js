@@ -1,15 +1,4 @@
-import { ADD, SUBTRACT, FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_ERROR } from './Constants';
-
-export const addAction = (value1, value2) => ({
-  type: ADD,
-  value1,
-  value2
-});
-export const subtractionAction = (value1, value2) => ({
-  type: SUBTRACT,
-  value1,
-  value2
-});
+import {FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_ERROR } from './Constants';
 
 export const fetchData = () => dispatch => {
   dispatch({ type: FETCH_DATA });

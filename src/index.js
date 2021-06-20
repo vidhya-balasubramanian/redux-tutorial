@@ -14,8 +14,12 @@ import Reducer from './redux/reducers';
 import RootSaga from './redux/sagas';
 
 
+// Sagas
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(Reducer, applyMiddleware(thunk, sagaMiddleware));
+const store = createStore(
+  Reducer,
+  applyMiddleware(thunk, sagaMiddleware)
+);
 sagaMiddleware.run(RootSaga);
 
 ReactDOM.render(
