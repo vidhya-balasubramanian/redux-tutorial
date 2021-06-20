@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-// import thunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -15,7 +15,7 @@ import RootSaga from './redux/sagas';
 
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(Reducer, applyMiddleware(sagaMiddleware));
+const store = createStore(Reducer, applyMiddleware(thunk, sagaMiddleware));
 sagaMiddleware.run(RootSaga);
 
 ReactDOM.render(
