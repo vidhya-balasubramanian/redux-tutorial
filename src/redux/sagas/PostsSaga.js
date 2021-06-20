@@ -2,7 +2,8 @@ import {call, put, takeEvery} from 'redux-saga/effects'
 
 const API_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
 
-function* fetchUser(action) {
+debugger
+function* fetchPost(action) {
   try {
     const data = yield call(() => fetch(API_ENDPOINT).then(r => r.json()));
     yield put({type: "GET_POSTS_SUCCESS", user: data});
@@ -11,6 +12,7 @@ function* fetchUser(action) {
   }
 }
 
-export function* postsSaga() {
-  yield takeEvery("GET_POSTS", fetchUser);
+export default function* postsSaga() {
+  debugger
+  yield takeEvery("GET_POSTS", fetchPost);
 }

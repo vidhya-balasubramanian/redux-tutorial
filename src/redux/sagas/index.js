@@ -1,6 +1,7 @@
-import {postsSaga} from './PostsSaga'
+import postsSaga from './PostsSaga'
 
-export default function* rootSaga() {
+debugger
+export default function* RootSaga() {
   yield [
     postsSaga()
   ]
