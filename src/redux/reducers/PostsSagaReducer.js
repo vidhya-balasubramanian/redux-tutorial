@@ -4,7 +4,6 @@ export const postSagaReducer = (prevState = {}, action) => {
       return Object.assign({}, prevState, {isFetching: true});
     }
     case "GET_POSTS_SUCCESS": {
-      debugger
       return Object.assign({}, prevState, {isFetching: false}, {posts: action.data});
     }
     case "GET_POSTS_ERROR": {

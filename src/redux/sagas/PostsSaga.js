@@ -2,7 +2,6 @@ import {call, put, takeEvery} from 'redux-saga/effects'
 
 const API_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
 
-debugger
 function* fetchPost(action) {
   try {
     const data = yield call(() => fetch(API_ENDPOINT).then(r => r.json()));
